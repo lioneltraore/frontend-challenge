@@ -1,4 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { range } from '@frontend-challenge/utils';
 import styles from './app.module.scss';
 
 import NxWelcome from './nx-welcome';
@@ -6,6 +7,7 @@ import NxWelcome from './nx-welcome';
 import { Route, Routes, Link } from 'react-router-dom';
 
 export function App() {
+  console.log(range(40, 55));
   return (
     <div>
       <NxWelcome title="mortgage-repayment-calculator" />
