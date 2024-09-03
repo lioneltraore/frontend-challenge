@@ -1,0 +1,16 @@
+{
+  "name": "mortgage-repayment-calculator",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/mortgage-repayment-calculator/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/mortgage-repayment-calculator/jest.config.ts"
+      }
+    }
+  }
+}
