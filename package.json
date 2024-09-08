@@ -19,6 +19,7 @@
     "@capacitor/status-bar": "^5.0.0",
     "@ionic/angular": "^7.0.0",
     "ionicons": "^7.0.0",
+    "preline": "^2.4.1",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-router-dom": "6.11.2",
