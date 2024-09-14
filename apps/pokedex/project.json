@@ -1,0 +1,55 @@
+{
+  "name": "pokedex",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@analogjs/platform:vite",
+      "defaultConfiguration": "production",
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "sourcemap": false,
+          "mode": "production"
+        }
+      },
+      "outputs": [
+        "{options.outputPath}",
+        "{workspaceRoot}/dist/apps/pokedex/.nitro",
+        "{workspaceRoot}/dist/apps/pokedex/ssr",
+        "{workspaceRoot}/dist/apps/pokedex/analog"
+      ],
+      "options": {
+        "main": "apps/pokedex/src/main.ts",
+        "configFile": "apps/pokedex/vite.config.ts",
+        "outputPath": "dist/apps/pokedex/client",
+        "tsConfig": "apps/pokedex/tsconfig.app.json"
+      }
+    },
+    "serve": {
+      "executor": "@analogjs/platform:vite-dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "pokedex:build",
+        "port": 4200
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "pokedex:build:development",
+          "hmr": true
+        },
+        "production": {
+          "buildTarget": "pokedex:build:production"
+        }
+      }
+    },
+    "test": {
+      "executor": "@analogjs/vitest-angular:test",
+      "outputs": ["{projectRoot}/coverage"]
+    }
+  },
+  "tags": [],
+  "sourceRoot": "apps/pokedex/src"
+}
